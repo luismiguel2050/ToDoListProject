@@ -13,8 +13,12 @@ import java.util.List;
 @NoArgsConstructor
 @Table(name = "lists")
 public class ToDoList {
+
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
+
+    private String name;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
