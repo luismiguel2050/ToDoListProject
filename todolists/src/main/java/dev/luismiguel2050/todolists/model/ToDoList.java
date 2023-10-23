@@ -15,7 +15,6 @@ import java.util.List;
 public class ToDoList {
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
     private User user;
 
     private String name;

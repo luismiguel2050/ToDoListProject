@@ -1,9 +1,7 @@
 package dev.luismiguel2050.todolists.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -12,6 +10,8 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class User {
 
     @Id
@@ -19,9 +19,16 @@ public class User {
     private Long UserId;
 
     private String password;
+    @Column(unique = true)
     private String username;
 
     
     @OneToMany(mappedBy = "user")
     private List<ToDoList> toDoListList;
+
+    @Override
+    public String toString(){
+        return "User{" +
+                "username='" + username + "'";
+    }
 }

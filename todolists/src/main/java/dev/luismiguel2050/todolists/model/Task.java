@@ -17,7 +17,6 @@ public class Task {
     private Long taskId;
 
     @ManyToOne
-    @JoinColumn(name = "todo_list_id")
     private ToDoList list;
 
     private String description;
